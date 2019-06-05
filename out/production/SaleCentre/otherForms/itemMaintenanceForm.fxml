@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="614.0" prefWidth="910.0" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="otherForms.itemMaintenanceFormController">
+    <GridPane layoutY="-2.0" prefHeight="614.0" prefWidth="914.0"
+              style="-fx-background-color: linear-gradient(to bottom, #e0e0e0, #999999);">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="200.0" minHeight="0.0" prefHeight="33.0" vgrow="SOMETIMES"/>
+            <RowConstraints maxHeight="494.0" minHeight="10.0" prefHeight="228.0" vgrow="SOMETIMES"/>
+            <RowConstraints maxHeight="403.0" minHeight="10.0" prefHeight="283.0" vgrow="SOMETIMES"/>
+            <RowConstraints maxHeight="403.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES"/>
+        </rowConstraints>
+        <Button fx:id="btnClose" mnemonicParsing="false" onAction="#handleCloseButton" prefHeight="2.0"
+                prefWidth="24.0" style="-fx-background-radius: 50 50 50 50; -fx-background-color: #914200;" text="X"
+                textFill="#ff861e" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.valignment="TOP">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+            <GridPane.margin>
+                <Insets right="20.0" top="10.0"/>
+            </GridPane.margin>
+        </Button>
+        <Label prefHeight="43.0" prefWidth="457.0"
+               style="-fx-background-color: linear-gradient(to bottom, #ffc28e, #ff861e); -fx-background-radius: 0 0 20 0;"
+               text="Item Maintenance" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="29.0"/>
+            </font>
+            <padding>
+                <Insets left="20.0"/>
+            </padding>
+        </Label>
+        <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="1">
+            <Label layoutX="73.0" layoutY="39.0" text="Item Number:">
+                <font>
+                    <Font name="Nirmala UI Semilight" size="16.0"/>
+                </font>
+            </Label>
+            <TextField fx:id="txtItemNum" layoutX="223.0" layoutY="39.0" prefHeight="25.0" prefWidth="321.0"
+                       promptText="Enter Item Number"/>
+            <TextField fx:id="txtItemDescription" layoutX="223.0" layoutY="87.0" prefHeight="25.0"
+                       prefWidth="321.0" promptText="Enter Item Description"/>
+            <Label layoutX="73.0" layoutY="87.0" text="Item Description:">
+                <font>
+                    <Font name="Nirmala UI Semilight" size="16.0"/>
+                </font>
+            </Label>
+            <CheckBox fx:id="chkRestricted" layoutX="630.0" layoutY="39.0" mnemonicParsing="false"
+                      text="Restricted Item">
+                <font>
+                    <Font size="16.0"/>
+                </font>
+            </CheckBox>
+            <CheckBox fx:id="chkWeighted" layoutX="630.0" layoutY="91.0" mnemonicParsing="false"
+                      text="Weighted Item">
+                <font>
+                    <Font size="16.0"/>
+                </font>
+            </CheckBox>
+            <Label layoutX="73.0" layoutY="137.0" text="Price:">
+                <font>
+                    <Font name="Nirmala UI Semilight" size="16.0"/>
+                </font>
+            </Label>
+            <TextField fx:id="txtItemPrice" layoutX="223.0" layoutY="137.0" prefHeight="25.0" prefWidth="321.0"
+                       promptText="Enter Price (Form: 0.00)"/>
+        </Pane>
+        <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" GridPane.columnSpan="2"
+                 GridPane.rowIndex="2">
+            <Tab text="Department/Location Information">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <Label layoutX="43.0" layoutY="40.0" text="Department:">
+                        <font>
+                            <Font name="Nirmala UI Semilight" size="16.0"/>
+                        </font>
+                    </Label>
+                    <Label layoutX="43.0" layoutY="88.0" text="Sub Department:">
+                        <font>
+                            <Font name="Nirmala UI Semilight" size="16.0"/>
+                        </font>
+                    </Label>
+                    <ComboBox fx:id="cmbDepartment" layoutX="227.0" layoutY="40.0"
+                              onAction="#handleDepartmentComboBoxChange" prefHeight="25.0" prefWidth="248.0"
+                              promptText="Select Department"/>
+                    <ComboBox fx:id="cmbSubDepartment" disable="true" layoutX="227.0" layoutY="88.0"
+                              prefHeight="25.0" prefWidth="248.0" promptText="Department must be selected"/>
+                    <Label layoutX="43.0" layoutY="138.0" text="Location ID:">
+                        <font>
+                            <Font name="Nirmala UI Semilight" size="16.0"/>
+                        </font>
+                    </Label>
+                    <TextField fx:id="txtLocationID" layoutX="227.0" layoutY="138.0" prefHeight="25.0"
+                               prefWidth="248.0"/>
+                    <Button fx:id="txtLocationList" contentDisplay="TOP" layoutX="484.0" layoutY="138.0"
+                            minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0"
+                            prefWidth="30.0" text="..." textAlignment="CENTER">
+                        <font>
+                            <Font size="14.0"/>
+                        </font>
+                    </Button>
+                </AnchorPane>
+            </Tab>
+            <Tab text="Vendor Information">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <Label layoutX="89.0" layoutY="30.0" text="Vendor ID:">
+                        <font>
+                            <Font name="Nirmala UI Semilight" size="16.0"/>
+                        </font>
+                    </Label>
+                    <Label layoutX="89.0" layoutY="71.0" text="Vendor Name:">
+                        <font>
+                            <Font name="Nirmala UI Semilight" size="16.0"/>
+                        </font>
+                    </Label>
+                    <Label layoutX="89.0" layoutY="112.0" text="Vendor Phone:">
+                        <font>
+                            <Font name="Nirmala UI Semilight" size="16.0"/>
+                        </font>
+                    </Label>
+                    <Label layoutX="89.0" layoutY="155.0" text="Vendor Email:">
+                        <font>
+                            <Font name="Nirmala UI Semilight" size="16.0"/>
+                        </font>
+                    </Label>
+                    <TextField fx:id="txtVendorID" layoutX="239.0" layoutY="30.0" prefHeight="25.0"
+                               prefWidth="437.0" promptText="Enter Vendor ID"/>
+                    <TextField fx:id="txtVendorName" layoutX="239.0" layoutY="71.0" prefHeight="25.0"
+                               prefWidth="437.0" promptText="Enter Vendor Name"/>
+                    <TextField fx:id="txtVendorPhone" layoutX="239.0" layoutY="112.0" prefHeight="25.0"
+                               prefWidth="437.0" promptText="Enter Vendor Phone"/>
+                    <TextField fx:id="txtVendorEmail" layoutX="239.0" layoutY="155.0" prefHeight="25.0"
+                               prefWidth="437.0" promptText="Enter Vendor Email"/>
+                    <Button fx:id="btnSaveVendor" disable="true" layoutX="239.0" layoutY="192.0"
+                            mnemonicParsing="false" prefHeight="43.0" prefWidth="178.0"
+                            text="Save Vendor Details">
+                        <font>
+                            <Font size="16.0"/>
+                        </font>
+                    </Button>
+                    <Button fx:id="btnFindVendor" layoutX="432.0" layoutY="192.0" mnemonicParsing="false"
+                            prefHeight="43.0" prefWidth="178.0" text="Find Vendor From List">
+                        <font>
+                            <Font size="16.0"/>
+                        </font>
+                    </Button>
+                </AnchorPane>
+            </Tab>
+            <Tab text="Replenishment Information">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <CheckBox fx:id="chkAutoRestock" layoutX="99.0" layoutY="49.0" mnemonicParsing="false"
+                              text="Auto Restock">
+                        <font>
+                            <Font name="Nirmala UI Semilight" size="16.0"/>
+                        </font>
+                    </CheckBox>
+                    <CheckBox fx:id="chkVendorStocked" layoutX="99.0" layoutY="88.0" mnemonicParsing="false"
+                              text="Vendor Stocked">
+                        <font>
+                            <Font name="Nirmala UI Semilight" size="16.0"/>
+                        </font>
+                    </CheckBox>
+                </AnchorPane>
+            </Tab>
+        </TabPane>
+        <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="3">
+            <Button fx:id="btnSave" layoutX="394.0" layoutY="6.0" mnemonicParsing="false" prefHeight="37.0"
+                    prefWidth="127.0" text="Save">
+                <font>
+                    <Font size="16.0"/>
+                </font>
+            </Button>
+        </Pane>
+    </GridPane>
+</AnchorPane>

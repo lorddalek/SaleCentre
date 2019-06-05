@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="802.0" prefWidth="1238.0" style="-fx-background-color: #919191;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainForm.mainFormController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="786.0" minWidth="10.0" prefWidth="217.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="1089.0" minWidth="10.0" prefWidth="1021.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="263.0" minHeight="0.0" prefHeight="48.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="263.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="263.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="713.0" minHeight="10.0" prefHeight="59.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="717.0" minHeight="10.0" prefHeight="661.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <Label fx:id="lblTitle" prefHeight="49.0" prefWidth="1237.0" style="-fx-background-color: linear-gradient(to bottom, #ffc28e, #ff861e); -fx-background-radius: 0 0 20 20;" text="Sale Centre Professional" textFill="WHITE" GridPane.columnSpan="2">
+      <font>
+         <Font name="Verdana Bold" size="18.0" />
+      </font>
+      <padding>
+         <Insets left="20.0" />
+      </padding>
+   </Label>
+   <Button fx:id="btnClose1" disable="true" mnemonicParsing="false" prefHeight="25.0" prefWidth="26.0" style="-fx-background-radius: 50 50 50 50; -fx-background-color: #914200;" text="--" textFill="#ff861e" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font>
+      <GridPane.margin>
+         <Insets right="50.0" />
+      </GridPane.margin>
+   </Button>
+   <Button fx:id="btnClose" mnemonicParsing="false" onAction="#handleCloseButton" prefHeight="25.0" prefWidth="16.0" style="-fx-background-radius: 50 50 50 50; -fx-background-color: #914200;" text="X" textFill="#ff861e" GridPane.columnIndex="1" GridPane.halignment="RIGHT">
+      <GridPane.margin>
+         <Insets right="20.0" />
+      </GridPane.margin>
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font>
+   </Button>
+   <Pane prefHeight="50.0" prefWidth="1238.0" style="-fx-background-color: linear-gradient(to bottom, #e0e0e0, #999999);" GridPane.columnSpan="2" GridPane.rowIndex="3">
+      <Button id="btnViewItem" fx:id="btnViewItem" layoutX="221.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleViewItemButton" prefHeight="33.0" prefWidth="92.0" text="View Item" visible="false">
+      </Button>
+      <ProgressBar id="loaderBar" fx:id="loaderBar" layoutY="18.0" prefWidth="200.0" progress="0.0" visible="false" />
+      <Button id="btnAddItem" fx:id="btnAddItem" layoutX="256.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleAddItemButton" prefHeight="33.0" prefWidth="92.0" text="Add Item" visible="false" />
+      <Button id="btnEditItem" fx:id="btnEditItem" layoutX="361.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleEditItemButton" prefHeight="33.0" prefWidth="92.0" text="Edit Item" visible="false" />
+      <Button id="btnDeleteItem" fx:id="btnDeleteItem" layoutX="464.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleDeleteItemButton" prefHeight="33.0" prefWidth="92.0" text="Delete Item" visible="false" />
+      <Button id="btnViewItem1" fx:id="btnViewItem1" disable="true" layoutX="566.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleViewItemButton" prefHeight="33.0" prefWidth="92.0" text="View Item" visible="false" />
+      <Button fx:id="btnCreateUser" layoutX="256.0" layoutY="11.0" mnemonicParsing="false" onAction="#handleCreateUserButton" prefHeight="33.0" prefWidth="92.0" text="Create User" visible="false" />
+      <Button fx:id="btnEditUser" layoutX="361.0" layoutY="11.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="92.0" text="Edit User" visible="false" />
+      <Button fx:id="btnDeleteUser" layoutX="464.0" layoutY="11.0" mnemonicParsing="false" onAction="#handleDeleteUserButton" prefHeight="33.0" prefWidth="92.0" text="Delete User" visible="false" />
+      <TextField fx:id="txtSearch" layoutX="348.0" layoutY="14.0" prefHeight="25.0" prefWidth="333.0" promptText="Search For Item" visible="false" />
+      <Button fx:id="btnSearch" layoutX="689.0" layoutY="10.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="80.0" text="Search" visible="false" />
+      <Button fx:id="btnAddLocation" layoutX="249.0" layoutY="6.0" mnemonicParsing="false" onAction="#handleAddLocationButton" prefHeight="44.0" prefWidth="100.0" text="Add Location" />
+      <Button fx:id="btnEditLocation" disable="true" layoutX="361.0" layoutY="6.0" mnemonicParsing="false" onAction="#handleEditLocationButton" prefHeight="44.0" prefWidth="100.0" text="Edit Location" />
+      <Button fx:id="btnDeleteLocation" disable="true" layoutX="473.0" layoutY="6.0" mnemonicParsing="false" onAction="#handleDeleteLocationButton" prefHeight="44.0" prefWidth="100.0" text="Delete Location" />
+   </Pane>
+   <Accordion style="-fx-border-color: #f4a742; -fx-background-color: linear-gradient(to bottom, #e0e0e0, #999999);" GridPane.rowIndex="4">
+      <panes>
+         <TitledPane animated="false" prefHeight="489.0" prefWidth="216.0" text="Stock Management">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <VBox prefHeight="538.0" prefWidth="230.0" style="-fx-background-color: #919191;">
+               <Button id="btnStockList" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleStockListButton" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to bottom, #dbdbdb, #ffffff);" text="Stock List">
+                  <VBox.margin>
+                     <Insets left="-10.0" right="-10.0" top="-10.0" />
+                  </VBox.margin>
+                  <font>
+                     <Font name="Arial Bold" size="12.0" />
+                  </font>
+               </Button>
+               <Button id="btnItemManagement" fx:id="btnItemManagement" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleItemManagementButton" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to bottom, #dbdbdb, #ffffff);" text="Item Management">
+                  <VBox.margin>
+                     <Insets left="-10.0" right="-10.0" />
+                  </VBox.margin>
+                  <font>
+                     <Font name="Arial Bold" size="12.0" />
+                  </font>
+               </Button>
+               <Button mnemonicParsing="false" onAction="#handleStockAdjustButton" prefHeight="40.0" prefWidth="219.0" style="-fx-background-color: linear-gradient(to bottom, #dbdbdb, #ffffff);" text="Stock Adjustment">
+                  <font>
+                     <Font name="Arial Bold" size="12.0" />
+                  </font>
+                  <VBox.margin>
+                     <Insets left="-10.0" right="-10.0" />
+                  </VBox.margin>
+               </Button>
+               <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="219.0" style="-fx-background-color: linear-gradient(to bottom, #dbdbdb, #ffffff);" text="Stock Location">
+                  <font>
+                     <Font name="Arial Bold" size="12.0" />
+                  </font>
+                  <VBox.margin>
+                     <Insets left="-10.0" right="-10.0" />
+                  </VBox.margin>
+               </Button>
+               <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="219.0" style="-fx-background-color: linear-gradient(to bottom, #dbdbdb, #ffffff);" text="Order Stock">
+                  <font>
+                     <Font name="Arial Bold" size="12.0" />
+                  </font>
+                  <VBox.margin>
+                     <Insets left="-10.0" right="-10.0" />
+                  </VBox.margin>
+               </Button>
+               <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="219.0" style="-fx-background-color: linear-gradient(to bottom, #dbdbdb, #ffffff);" text="Stocktake">
+                  <font>
+                     <Font name="Arial Bold" size="12.0" />
+                  </font>
+                  <VBox.margin>
+                     <Insets left="-10.0" right="-10.0" />
+                  </VBox.margin>
+               </Button>
+            </VBox>
+         </TitledPane>
+         <TitledPane animated="false" expanded="false" style="-fx-background-color: #919191;" text="System Maintenance">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #919191;">
+               <Button id="btnUserMaintenance" fx:id="btnUserMaintenance" mnemonicParsing="false" onAction="#handleUserMaintenanceButton" prefHeight="40.0" prefWidth="211.0" style="-fx-background-color: linear-gradient(to bottom, #dbdbdb, #ffffff);" text="User Maintenance">
+                  <font>
+                     <Font name="Arial Bold" size="12.0" />
+                  </font>
+                  <VBox.margin>
+                     <Insets left="-10.0" right="-10.0" top="-10.0" />
+                  </VBox.margin>
+               </Button>
+               <Button id="btnUserMaintenance" fx:id="btnLocationMaintenance" mnemonicParsing="false" onAction="#handleLocationMaintenanceButton" prefHeight="40.0" prefWidth="211.0" style="-fx-background-color: linear-gradient(to bottom, #dbdbdb, #ffffff);" text="Location Maintenance">
+                  <font>
+                     <Font name="Arial Bold" size="12.0" />
+                  </font>
+                  <VBox.margin>
+                     <Insets left="-10.0" right="-10.0" />
+                  </VBox.margin>
+               </Button>
+               <Button id="btnUserMaintenance" fx:id="btnVendorMaintenance" mnemonicParsing="false" prefHeight="40.0" prefWidth="211.0" style="-fx-background-color: linear-gradient(to bottom, #dbdbdb, #ffffff);" text="Vendor Maintenance">
+                  <font>
+                     <Font name="Arial Bold" size="12.0" />
+                  </font>
+                  <VBox.margin>
+                     <Insets left="-10.0" right="-10.0" />
+                  </VBox.margin>
+               </Button>
+            </VBox>
+         </TitledPane>
+         <TitledPane animated="false" text="Reports">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #919191;">
+               <VBox layoutX="-2.0" prefHeight="541.0" prefWidth="216.0">
+                  <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: linear-gradient(to bottom, #dbdbdb, #ffffff);" text="Stock Adjustment Log">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Button>
+               </VBox>
+            </AnchorPane>
+         </TitledPane>
+         <TitledPane animated="false" text="Point of Sale">
+            <font>
+               <Font size="18.0" />
+            </font>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #919191;">
+               <VBox prefHeight="498.0" prefWidth="216.0">
+                  <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: linear-gradient(to bottom, #dbdbdb, #ffffff);" text="POS Activity">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="5.0" right="5.0" top="5.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="220.0" style="-fx-background-color: linear-gradient(to bottom, #dbdbdb, #ffffff);" text="Transaction Log">
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </VBox.margin>
+                  </Button>
+               </VBox>
+            </AnchorPane>
+         </TitledPane>
+      </panes>
+   </Accordion>
+   <AnchorPane prefHeight="702.0" prefWidth="1039.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+      <Pane id="pnlUserMaintenance" fx:id="paneUserMaintenance" layoutX="3.0" layoutY="6.0" prefHeight="658.0" prefWidth="1014.0" style="-fx-background-color: linear-gradient(to bottom, #e0e0e0, #999999);" visible="false">
+         <TableView fx:id="tblUsers" layoutX="70.0" layoutY="51.0" onMouseClicked="#enableUserButtons" prefHeight="447.0" prefWidth="880.0">
+            <columns>
+               <TableColumn fx:id="userIDCol" prefWidth="145.0" text="User ID" />
+               <TableColumn fx:id="userNameCol" minWidth="0.0" prefWidth="460.0" text="User Name" />
+               <TableColumn fx:id="accessCol" prefWidth="274.0" text="Access" />
+            </columns>
+         </TableView>
+         <Button fx:id="btnRefreshList" layoutX="849.0" layoutY="504.0" mnemonicParsing="false" onAction="#handleRefreshUserTableButton" text="Refresh List">
+            <font>
+               <Font name="Nirmala UI Semilight" size="16.0" />
+            </font>
+         </Button>
+         <Label fx:id="lblEditDeleteUser" layoutX="95.0" layoutY="14.0">
+            <font>
+               <Font name="Nirmala UI Semilight" size="17.0" />
+            </font>
+         </Label>
+         <TextField fx:id="txtEditDelete" layoutX="277.0" layoutY="9.0" onKeyReleased="#handleEditDeleteTextChanged" prefHeight="12.0" prefWidth="157.0" visible="false">
+            <font>
+               <Font name="Nirmala UI Semilight" size="16.0" />
+            </font>
+         </TextField>
+         <Button fx:id="btnDone" layoutX="450.0" layoutY="15.0" mnemonicParsing="false" onAction="#handleDeleteDoneButton" text="Done" visible="false" />
+      </Pane>
+      <Pane id="paneItemManagement" fx:id="paneItemManagement" prefHeight="678.0" prefWidth="1020.0" visible="false" />
+      <Pane id="paneItemsTable" fx:id="paneItemsTable" prefHeight="669.0" prefWidth="1020.0" visible="false">
+         <TableView id="tblItems" fx:id="tblItems" layoutY="10.0" onMouseClicked="#enableViewItem" prefHeight="658.0" prefWidth="1020.0" />
+      </Pane>
+      <Pane fx:id="paneStockAdjust" layoutY="6.0" prefHeight="669.0" prefWidth="1021.0" style="-fx-background-color: linear-gradient(to bottom, #e0e0e0, #999999);" visible="false">
+         <Label layoutX="216.0" layoutY="48.0" text="Item Number:">
+            <font>
+               <Font name="Nirmala UI Semilight" size="16.0" />
+            </font>
+         </Label>
+         <TextField fx:id="txtItemNum" layoutX="424.0" layoutY="49.0" onKeyReleased="#checkForItem" prefHeight="25.0" prefWidth="267.0" promptText="Enter Item Number" />
+         <Button layoutX="705.0" layoutY="48.0" mnemonicParsing="false" onAction="#handleItemListButton" text="..." />
+         <Label fx:id="lblLabelItemDescription" disable="true" layoutX="216.0" layoutY="100.0" text="Item Description:">
+            <font>
+               <Font name="Nirmala UI Semilight" size="16.0" />
+            </font>
+         </Label>
+         <Label fx:id="lblItemDescription" disable="true" layoutX="424.0" layoutY="100.0" text="This will populate when item number is entered">
+            <font>
+               <Font name="Nirmala UI Semilight" size="16.0" />
+            </font>
+         </Label>
+         <Label fx:id="lblLabelReason" disable="true" layoutX="216.0" layoutY="153.0" text="Reason:">
+            <font>
+               <Font name="Nirmala UI Semilight" size="16.0" />
+            </font>
+         </Label>
+         <ComboBox fx:id="cmbReason" disable="true" layoutX="424.0" layoutY="153.0" onAction="#enableSaveButton" prefHeight="25.0" prefWidth="267.0" promptText="Reason for adjustment">
+            <items>
+               <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="Damaged Stock" />
+                  <String fx:value="Out of Date" />
+                  <String fx:value="+ Stock Correction" />
+                  <String fx:value="- Stock Correction" />
+                  <String fx:value="Theft" />
+               </FXCollections>
+            </items>
+         </ComboBox>
+         <TextField fx:id="txtQuantityAdjusting" disable="true" layoutX="424.0" layoutY="202.0" onKeyReleased="#quantityAdjustTextboxChanged" prefHeight="25.0" prefWidth="72.0" promptText="Enter Qty" />
+         <RadioButton fx:id="radQuantityAdjusting" disable="true" layoutX="216.0" layoutY="202.0" mnemonicParsing="false" onAction="#radQuantityAdjustedClicked" text="Quantity Adjusting:">
+            <font>
+               <Font name="Nirmala UI Semilight" size="16.0" />
+            </font>
+         </RadioButton>
+         <RadioButton fx:id="radEndSOH" disable="true" layoutX="218.0" layoutY="249.0" mnemonicParsing="false" onAction="#radEndSOHClicked" text="End SOH:">
+            <font>
+               <Font name="Nirmala UI Semilight" size="16.0" />
+            </font>
+         </RadioButton>
+         <TextField fx:id="txtEndSOH" disable="true" layoutX="424.0" layoutY="249.0" onKeyReleased="#endSOHTextboxChanged" prefHeight="25.0" prefWidth="72.0" promptText="Enter SOH" />
+         <Label fx:id="lblLabelQuantityAdjusting" disable="true" layoutX="216.0" layoutY="310.0" text="Quantity Adjusting:">
+            <font>
+               <Font name="Nirmala UI Semilight" size="16.0" />
+            </font>
+         </Label>
+         <Label fx:id="lblQuantityAdjusting" disable="true" layoutX="424.0" layoutY="310.0">
+            <font>
+               <Font name="Nirmala UI Semilight" size="16.0" />
+            </font>
+         </Label>
+         <Label fx:id="lblLabelVOA" disable="true" layoutX="216.0" layoutY="360.0" text="Value of Adjustment:">
+            <font>
+               <Font name="Nirmala UI Semilight" size="16.0" />
+            </font>
+         </Label>
+         <Label fx:id="lblVOA" disable="true" layoutX="424.0" layoutY="360.0">
+            <font>
+               <Font name="Nirmala UI Semilight" size="16.0" />
+            </font>
+         </Label>
+         <Button fx:id="btnSaveStockAdjust" disable="true" layoutX="470.0" layoutY="425.0" mnemonicParsing="false" onAction="#handleSaveStockAdjust" prefHeight="37.0" prefWidth="175.0" text="Save">
+            <font>
+               <Font name="Nirmala UI Semilight" size="16.0" />
+            </font>
+         </Button>
+      </Pane>
+      <Pane fx:id="paneLocationMaintenance" layoutX="3.0" layoutY="12.0" prefHeight="652.0" prefWidth="1014.0" style="-fx-background-color: linear-gradient(to bottom, #e0e0e0, #999999);">
+         <TabPane prefHeight="652.0" prefWidth="1014.0" tabClosingPolicy="UNAVAILABLE">
+            <Tab fx:id="tabLIA" onSelectionChanged="#changeLocationTab" text="Locations in Store">
+               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <TableView fx:id="tblLIS" layoutX="14.0" layoutY="14.0" onMouseClicked="#handleLISTableClicked" prefHeight="299.0" prefWidth="989.0">
+                     <columns>
+                        <TableColumn fx:id="locationIDCol" prefWidth="190.0" text="Location ID" />
+                        <TableColumn fx:id="locationDescriptionCol" prefWidth="795.0" text="Location Description" />
+                     </columns>
+                  </TableView>
+                  <Pane fx:id="paneLISMaintenance" layoutX="14.0" layoutY="312.0" prefHeight="289.0" prefWidth="990.0" visible="false">
+                     <Label layoutX="154.0" layoutY="71.0" text="Location ID:">
+                        <font>
+                           <Font name="Nirmala UI Semilight" size="16.0" />
+                        </font>
+                     </Label>
+                     <TextField fx:id="txtLIAID" layoutX="315.0" layoutY="71.0" prefHeight="25.0" prefWidth="267.0" promptText="Enter a Location ID Name (Max 8 characters)" />
+                     <Label layoutX="154.0" layoutY="120.0" text="Location Name:">
+                        <font>
+                           <Font name="Nirmala UI Semilight" size="16.0" />
+                        </font>
+                     </Label>
+                     <TextField fx:id="txtLIADescription" layoutX="315.0" layoutY="120.0" prefHeight="25.0" prefWidth="267.0" promptText="Enter a Location Description" />
+                     <Button layoutX="315.0" layoutY="177.0" mnemonicParsing="false" onAction="#handleSaveLISButton" prefHeight="37.0" prefWidth="187.0" text="Save">
+                        <font>
+                           <Font size="16.0" />
+                        </font>
+                     </Button>
+                  </Pane>
+               </AnchorPane>
+            </Tab>
+            <Tab fx:id="tabSL" onSelectionChanged="#changeLocationTab" text="Storage Locations">
+               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <TableView fx:id="tblSL" layoutX="13.0" layoutY="14.0" onMouseClicked="#handleSLTableClicked" prefHeight="299.0" prefWidth="989.0">
+                     <columns>
+                        <TableColumn fx:id="storageLocationIDCol" prefWidth="190.0" text="Storage Location ID" />
+                        <TableColumn fx:id="storageLocationDescCol" prefWidth="795.0" text="Storage Location Description" />
+                     </columns>
+                  </TableView>
+                  <Pane fx:id="paneSLMaintenance" layoutX="14.0" layoutY="312.0" prefHeight="289.0" prefWidth="990.0" visible="false">
+                     <Label layoutX="154.0" layoutY="71.0" text="Location ID:">
+                        <font>
+                           <Font name="Nirmala UI Semilight" size="16.0" />
+                        </font>
+                     </Label>
+                     <TextField fx:id="txtSLID" layoutX="315.0" layoutY="71.0" prefHeight="25.0" prefWidth="267.0" promptText="Enter a Location ID Name (Max 8 characters)" />
+                     <Label layoutX="154.0" layoutY="120.0" text="Location Name:">
+                        <font>
+                           <Font name="Nirmala UI Semilight" size="16.0" />
+                        </font>
+                     </Label>
+                     <TextField fx:id="txtSLDescription" layoutX="315.0" layoutY="120.0" prefHeight="25.0" prefWidth="267.0" promptText="Enter a Location Description" />
+                     <Button layoutX="315.0" layoutY="177.0" mnemonicParsing="false" onAction="#handleSaveSLButton" prefHeight="37.0" prefWidth="187.0" text="Save">
+                        <font>
+                           <Font size="16.0" />
+                        </font>
+                     </Button>
+                  </Pane>
+               </AnchorPane>
+            </Tab>
+         </TabPane>
+      </Pane>
+   </AnchorPane>
+</GridPane>
